@@ -16,11 +16,17 @@ class StudentFactory extends Factory
      */
     public function definition(): array
     {
+        $courses=[
+            'Business Management',
+            'Data Science',
+            'Software Engineering'
+        ];
+
         return [
             'student_name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'student_address' => now(),
-            'student_course'
+            'student_course' => fake()->randomElement($courses)
         ];
     }
 }
