@@ -25,7 +25,7 @@ class StudentFactory extends Factory
         return [
             'student_name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'student_address' => now(),
+            'student_address' => fake()->address(),
             'student_course' => fake()->randomElement($courses)
         ];
     }
